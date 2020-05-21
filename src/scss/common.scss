@@ -1,0 +1,117 @@
+.common-container {
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 16px 16px 80px 16px;
+}
+.page-footer {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #eee;
+}
+@media screen and (max-width: 767px) {
+    .page-body {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        bottom: 56px;
+        width: 100%;
+        overflow: auto;
+    }
+    .page-footer {
+        display: block;
+    }
+    .page-nav {
+        display: none;
+    }
+    .page-content {
+        left: 0 !important;
+    }
+}
+
+/* 待办事项 */
+.todo-list {
+    // height: 400px;
+    margin-top: 50px;
+    // overflow: hidden;
+}
+.todo-list:hover {
+    overflow-y: auto;
+}
+.todo-list .list-group-item.done{
+    color: #ccc;
+}
+.todo-list .label {
+    float: right;
+}
+.todo-list .done {
+    opacity: .4;
+}
+.todo-list-empty {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+
+.col-timer {
+    margin-bottom: 64px;
+}
+.col-timer .tip {
+    color: #999;
+}
+.list-group {
+    border: 1px solid #999;
+    border-radius: 2px;
+}
+.list-group-item {
+    padding: 8px;
+    border-bottom: 1px solid #999;
+}
+.navbar-collapse-header {
+    display: none;
+}
+@media screen and (max-width: 767px) {
+
+
+}
+
+.tomato-box {
+    .tt-countdown {
+        color: #999;
+        font-size: 100px;
+    }
+    .input-minute {
+        float: left;
+        width: 140px;
+    }
+    .btn-start {
+        float: left;
+        margin-left: 50px;
+    }
+}
+@media all and (max-width: 800px) {
+    .tomato-box {
+        .tt-countdown {
+            font-size: 60px;
+        }
+    }
+}
+
+.todo-box {
+    max-width: 400px;
+}
+
+/* 番茄工作法步骤 */
+.progress-list {
+    li {
+        margin-top: 5px;
+        font-size: 18px;
+    }
+}
+.progress-notice {
+    margin-top: 50px;
+    font-size: 16px;
+}
