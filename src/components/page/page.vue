@@ -5,9 +5,9 @@
                 <img class="logo" src="/static/img/todo.svg">
             </div>
             <ui-list @itemClick="toggle()">
-                <ui-list-item title="待办" to="/">
+                <!-- <ui-list-item title="待办" to="/">
                     <ui-icon slot="left" value="grade"/>
-                </ui-list-item>
+                </ui-list-item> -->
                 <ui-list-item title="番茄钟" to="/tomato">
                     <ui-icon slot="left" value="grade"/>
                 </ui-list-item>
@@ -17,25 +17,13 @@
                 <ui-list-item title="专注" to="/focus">
                     <ui-icon slot="left" value="grade"/>
                 </ui-list-item>
-                <ui-list-item title="帮助" href="https://project.yunser.com/products/4b6f44905c5c11e888a50737631f72f2" target="_blank">
+                <ui-list-item title="专注插件" to="/focus/plugin">
+                    <ui-icon slot="left" value="grade"/>
+                </ui-list-item>
+                <ui-list-item title="帮助" href="https://project.yunser.com/products/864d1ee065c311e9a7018922ed87a412" target="_blank">
                     <ui-icon slot="left" value="info"/>
                 </ui-list-item>
             </ui-list>
-            <ui-list v-if="categories.length" @itemClick="toggle()">
-                <ui-sub-header>清单</ui-sub-header>
-                <ui-list-item :title="category.name" :to="`/categories/${category.id}`"
-                              v-for="category in categories" :key="category.id"></ui-list-item>
-            </ui-list>
-            <ui-list class="bottom-list" @itemClick="toggle()">
-                <ui-list-item title="新建清单" @click="openDialog">
-                    <ui-icon slot="left" value=":icon icon-add"/>
-                </ui-list-item>
-            </ui-list>
-            <ui-dialog :dialogClass="['list-dialog']" :open="dialog" title="新建清单" @close="close">
-                <ui-text-field v-model="categoryName" hintText="清单名称"/>
-                <ui-flat-button slot="actions" @click="close" primary label="取消"/>
-                <ui-flat-button slot="actions" primary @click="save" label="保存"/>
-            </ui-dialog>
         </div>
         <slot></slot>
     </ui-page>

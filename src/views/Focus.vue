@@ -1,11 +1,14 @@
 <template>
     <my-page title="专注" :page="page">
         <div class="common-container container">
-            <div class="state" v-if="isFocus">专注中...</div>
-            <div class="result" v-if="result">你专注了 {{ result }} 分钟</div>
-            <div class="btns">
-                <ui-raised-button class="btn" primary label="开始专注" @click="start" v-if="!isFocus" />
-                <ui-raised-button class="btn" secondary label="完成" @click="finish" v-if="isFocus" />
+            <div :class="['box', isFocus ? 'full' : '']">
+                <div class="state" v-if="isFocus">专注中...</div>
+                <div class="state" v-if="!isFocus">休息中...</div>
+                <div class="result" v-if="result">你专注了 {{ result }} 分钟</div>
+                <div class="btns">
+                    <ui-raised-button class="btn" primary label="开始专注" @click="start" v-if="!isFocus" />
+                    <ui-raised-button class="btn" secondary label="结束" @click="finish" v-if="isFocus" />
+                </div>
             </div>
         </div>
     </my-page>
@@ -50,9 +53,20 @@
 </script>
 
 <style lang="scss" scoped>
-.container {
+.box {
     padding-top: 160px;
     text-align: center;
+    &.full {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100000;
+        background: #fff;
+    }
+}
+.container {
 }
 .state {
     margin-bottom: 80px;
