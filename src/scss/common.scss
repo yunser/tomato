@@ -4,6 +4,15 @@
     margin: 0 auto;
     padding: 16px 16px 80px 16px;
 }
+/** 垂直&水平居中*/
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: #000;
+}
 .page-footer {
     display: none;
     position: absolute;
@@ -41,20 +50,19 @@
 .todo-list:hover {
     overflow-y: auto;
 }
-.todo-list .list-group-item.done{
+.todo-list .list-group-item.done {
     color: #ccc;
 }
 .todo-list .label {
     float: right;
 }
 .todo-list .done {
-    opacity: .4;
+    opacity: 0.4;
 }
 .todo-list-empty {
     margin-top: 30px;
     font-size: 20px;
 }
-
 
 .col-timer {
     margin-bottom: 64px;
@@ -74,14 +82,26 @@
     display: none;
 }
 @media screen and (max-width: 767px) {
+}
 
-
+@font-face {
+    font-family: font;
+    src: url("/static/font/electronic.ttf");
 }
 
 .tomato-box {
+    width: 250px;
+    height: 250px;
     .tt-countdown {
-        color: #999;
-        font-size: 100px;
+        font-family: font, "Courier New", Courier, monospace;
+        color: #fff;
+        font-size: 60px;
+        position: absolute
+    }
+    .statu{
+        position: absolute;
+        top: 50px;
+        font-size: 20px;
     }
     .input-minute {
         float: left;
@@ -90,13 +110,6 @@
     .btn-start {
         float: left;
         margin-left: 50px;
-    }
-}
-@media all and (max-width: 800px) {
-    .tomato-box {
-        .tt-countdown {
-            font-size: 60px;
-        }
     }
 }
 
