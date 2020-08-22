@@ -10,10 +10,9 @@
 
 MIT
 
-
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
